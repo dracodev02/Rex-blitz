@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#033954",
+        green: "#31F39C",
+        yellow: "#F0F726",
+        red: "#FF4800",
+        stroke: "#212121",
+      },
+      maxWidth: {
+        desktop: "1192px",
       },
     },
   },
