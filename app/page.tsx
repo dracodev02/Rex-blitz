@@ -8,8 +8,8 @@ import { useInView } from "react-intersection-observer";
 export default function Home() {
   function SectionWrapper({ children }: { children: React.ReactNode }) {
     const { ref, inView } = useInView({
-      triggerOnce: true, // Hiện chỉ một lần khi người dùng scroll tới
-      threshold: 0.5, // Phần trăm của phần tử cần xuất hiện trước khi kích hoạt
+      triggerOnce: true,
+      threshold: 0.2,
     });
 
     return (
@@ -29,7 +29,7 @@ export default function Home() {
       <Image
         className="w-screen h-screen fixed top-0 left-0 -z-[1] object-cover"
         width={1440}
-        height={1000}
+        height={2000}
         alt="background"
         src="/assets/images/background.png"
       />

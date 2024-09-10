@@ -32,7 +32,10 @@ const roadMapData = [
 
 const RoadMap = () => {
   return (
-    <div className="lg:pt-[300px] md:pt-44 pt-32 mx-auto lg:px-[124px] md:px-14 px-6">
+    <div
+      id="Roadmap"
+      className="pt-[92px] md:mt-[170px] mx-auto lg:px-[124px] md:px-14 px-6"
+    >
       <p className="lg:text-[72px] animate-fade-up md:text-[52px] text-[36px] text-red mb-[80px] border-roadmap text-center">
         rex blitz roadmap
       </p>

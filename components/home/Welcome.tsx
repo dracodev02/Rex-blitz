@@ -3,7 +3,10 @@ import PurpleDino from "@/public/assets/images/purple_dino.png";
 
 const Welcome = () => {
   return (
-    <div className=" pt-36 md:mb-0 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-0 mb-20">
+    <div
+      id="welcome"
+      className="md:h-screen pt-[100px] max-w-[1440px] mx-auto px-6 md:px-12 lg:px-0"
+    >
       <div className="flex flex-col items-center lg:max-w-[770px] mx-auto">
         <p className="text-center animate-fade-up text-[32px] md:text-[52px] lg:text-[72px] font-bold border-welcome">
           Welcome to REX BLITZ
@@ -18,7 +21,7 @@ const Welcome = () => {
         </button>
       </div>
       <Image
-        className="mt-[36px] md:mt-[54px] lg:ml-[124px] w-[160px] md:w-[240px] lg:w-[280px] lg:h-[313px]"
+        className="pt-[36px] ml-[10%] md:pt-[54px] max-md:w-1/2"
         alt="background"
         src={PurpleDino}
       />
