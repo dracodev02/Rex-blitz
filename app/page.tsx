@@ -1,9 +1,29 @@
+"use client";
 import About from "@/components/home/About";
 import RoadMap from "@/components/home/RoadMap";
 import Welcome from "@/components/home/Welcome";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
+  function SectionWrapper({ children }: { children: React.ReactNode }) {
+    const { ref, inView } = useInView({
+      triggerOnce: true, // Hiện chỉ một lần khi người dùng scroll tới
+      threshold: 0.5, // Phần trăm của phần tử cần xuất hiện trước khi kích hoạt
+    });
+
+    return (
+      <div
+        ref={ref}
+        className={`transition-opacity duration-1000 ${
+          inView ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div>
       <Image
@@ -16,8 +36,12 @@ export default function Home() {
       <Welcome />
       <div className="">
         <div className="max-w-[1440px] mx-auto ">
-          <About />
-          <RoadMap />
+          <SectionWrapper>
+            <About />
+          </SectionWrapper>
+          <SectionWrapper>
+            <RoadMap />
+          </SectionWrapper>
         </div>
       </div>
     </div>

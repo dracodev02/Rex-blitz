@@ -10,7 +10,7 @@ const Header = () => {
       <div className="max-w-desktop h-full m-auto flex justify-between items-center px-4 md:px-0">
         {/* Logo */}
         <div>
-          <p className="md:text-[32px] text-xl text-center md:leading-8 leading-6 border-logo">
+          <p className="md:text-[32px] text-xl text-center cursor-pointer md:leading-8 leading-6 border-logo">
             <span className="text-green">Red</span> <br />
             <span className="text-yellow">Blitz</span>
           </p>
@@ -19,7 +19,10 @@ const Header = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8">
           {items.map((item) => (
-            <p className="cursor-pointer text-stroke" key={item}>
+            <p
+              className="cursor-pointer hover:scale-110 transition-all text-stroke"
+              key={item}
+            >
               {item}
             </p>
           ))}
@@ -53,29 +56,32 @@ const Header = () => {
         <div
           className={`${
             menuOpen ? "flex" : "hidden"
-          } md:hidden absolute top-[92px] left-0 w-full bg-white z-10 flex-col items-center gap-4 py-4 shadow-lg`}
+          } md:hidden absolute top-[92px] left-0 w-full animate-fade  animate-duration-100 bg-white z-10 flex-col items-center gap-4 py-4 shadow-lg`}
         >
           {items.map((item) => (
             <p className="cursor-pointer text-stroke" key={item}>
               {item}
             </p>
           ))}
-          <p className="cursor-pointer text-stroke" key={"nav-bar_play_button"}>
+          <p
+            className="cursor-pointer animate-bounce animate-infinite animate-duration-[1000ms] animate-ease-out animate-reverse animate-fill-both text-stroke"
+            key={"nav-bar_play_button"}
+          >
             {`Let's play`}{" "}
           </p>
         </div>
 
         {/* Play Button */}
-        <div className="hidden md:flex bg-green cursor-pointer border-stroke border-[4px] py-3 px-8 rounded">
-          <p className="text-stroke leading-5 select-none">{`Let's play`}</p>
+        <div className="hidden md:flex bg-green cursor-pointer border-stroke border-[4px] py-3 px-8 rounded group">
+          <p className="text-stroke leading-5 select-none group-hover:scale-105 transition-all">{`Let's play`}</p>
         </div>
       </div>
 
       {/* Mobile Play Button (shown inside mobile menu) */}
       {menuOpen && (
-        <div className="md:hidden flex justify-center mt-4">
+        <div className="md:hidden flex justify-center mt-4 ">
           <div className="bg-green cursor-pointer border-stroke border-[4px] py-3 px-8 rounded">
-            <p className="text-stroke leading-5 select-none">{`Let's play`}</p>
+            <p className="text-stroke  leading-5 select-none">{`Let's play`}</p>
           </div>
         </div>
       )}
