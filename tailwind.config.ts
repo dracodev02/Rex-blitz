@@ -14,6 +14,8 @@ const config: Config = {
         yellow: "#F0F726",
         red: "#FF4800",
         stroke: "#212121",
+        purple: "#3910af",
+        brown: "#523409",
       },
       maxWidth: {
         desktop: "1192px",

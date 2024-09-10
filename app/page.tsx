@@ -1,3 +1,5 @@
+import About from "@/components/home/About";
+import RoadMap from "@/components/home/RoadMap";
 import Welcome from "@/components/home/Welcome";
 import Image from "next/image";
 
@@ -9,9 +11,15 @@ export default function Home() {
         width={1440}
         height={1000}
         alt="background"
-        src="/assets/background.png"
+        src="/assets/images/background.png"
       />
       <Welcome />
+      <div className="">
+        <div className="max-w-[1440px] mx-auto ">
+          <About />
+          <RoadMap />
+        </div>
+      </div>
     </div>
   );
 }
